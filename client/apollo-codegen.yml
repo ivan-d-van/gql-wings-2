@@ -1,0 +1,45 @@
+overwrite: true
+generates:
+  src/apollo/generated-fragment-types.ts:
+    schema:
+      - http://localhost:3080/graphql
+    documents: [
+      "./src/apollo/fragments/*.graphql.ts",
+      "./src/components/**/*.graphql.ts",
+      "./src/apollo/query/**/*.graphql.ts"
+    ]
+    plugins:
+      - "fragment-matcher"
+  src/apollo/generated-types.ts:
+    schema:
+      - http://localhost:3080/graphql
+    documents: [
+      "./src/apollo/fragments/*.graphql.ts",
+      "./src/components/**/*.graphql.ts",
+      "./src/apollo/query/**/*.graphql.ts"
+    ]
+    plugins:
+      - add:
+          content: "/** eslint-disable */\n/** ЭТОТ ФАЙЛ АВТОМАТИЧЕСКИ СГЕНЕРИРОВАН, ЕСЛИ НУЖНО ПЕРЕСОБРАТЬ ФАЙЛ yarn graphql */"
+      - typescript
+      - typescript-operations
+  src/apollo/generated-hooks.tsx:
+    schema:
+      - http://localhost:3080/graphql
+    documents: [
+      "./src/apollo/fragments/*.graphql.ts",
+      "./src/components/**/*.graphql.ts",
+      "./src/apollo/query/**/*.graphql.ts"
+    ]
+    plugins:
+      - add:
+          content: "/** eslint-disable */\n/** ЭТОТ ФАЙЛ АВТОМАТИЧЕСКИ СГЕНЕРИРОВАН, ЕСЛИ НУЖНО ПЕРЕСОБРАТЬ ФАЙЛ yarn graphql */"
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      reactApolloVersion: 3
+      reactApolloImportFrom: '@apollo/react-hooks'
+      withComponent: false
+      withHOC: false
+      withHooks: true

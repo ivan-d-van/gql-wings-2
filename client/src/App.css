@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+}
+
+.formsWrapper {
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcomePageWrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logoutBtnWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.welcomePage {
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+}
+
+.cabinet-general-form {
+  margin: 24px;
+}
+
+.withPointer {
+  cursor: pointer;
+}
+
+.tableWrapper {
+  margin: 24px;
+  width: auto;
+}
+
+.backToCabinetWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.send-tx-form {
+  margin: 24px;
+}
+
+.transactionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px
+}
